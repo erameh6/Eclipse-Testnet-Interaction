@@ -1,4 +1,4 @@
-
+UPDATED  ECLIPSE GUIDE FOR GITPOD NODE RUNNERS ONLY
 # REMEMBER, THIS IS ONLY FOR EDUCATIONAL PURPOSES! NOTHING IS PROMISED!  
 
 
@@ -51,7 +51,7 @@ sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
 
 
 ```
-export PATH="/root/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH"
 ```
 ![image](https://github.com/mztacat/Eclipse-Testnet-Interaction/assets/31314340/d84a6528-13c8-4fa0-aa2f-713e2711019d)
 
@@ -105,7 +105,7 @@ anchor --version
 
 ## Create a Solana Wallet 
 ```
-solana-keygen new -o /path-to-wallet/my-wallet.json
+solana-keygen new --outfile /home/gitpod/.config/solana/id.json
 ```
 ![image](https://github.com/mztacat/Eclipse-Testnet-Interaction/assets/31314340/5ebb84f3-8c57-4fdd-af89-b72d58373470)
 
@@ -123,10 +123,15 @@ solana config set --url https://testnet.dev2.eclipsenetwork.xyz/
 ![image](https://github.com/mztacat/Eclipse-Testnet-Interaction/assets/31314340/5e778d24-6df2-4ce9-a152-6e4d2fa8bc27)
 
 ```
-solana config set --keypair /path-to-wallet/my-wallet.json
+solana config set --keypair /home/gitpod/.config/solana/id.json
 
 ```
 
+### CHECK CONFIG
+```
+solana config get
+
+```
 ### Save Solana address 
 ```
 solana address
@@ -235,7 +240,7 @@ solana balance
 ------------------
 # Creating a Token 
 ```
-spl-token create-token --enable-metadata -p TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb
+spl-token create-token --enable-metadata --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb
 ```
 ![image](https://github.com/mztacat/Eclipse-Testnet-Interaction/assets/31314340/c677fb79-afdf-479c-9940-513760fd14c6)
 
